@@ -11,7 +11,7 @@ namespace ApiLogin.Data
         {
         }
 
-        DbSet<EmployeeModel> Employees { get; set; }
+       public DbSet<EmployeeModel> Employees { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

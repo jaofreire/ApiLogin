@@ -1,4 +1,6 @@
 using ApiLogin.Data;
+using ApiLogin.Repository;
+using ApiLogin.Repository.Interface;
 using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +13,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
 builder.Services.AddEntityFrameworkSqlServer().AddDbContext<LoginDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")
