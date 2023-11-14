@@ -6,6 +6,7 @@ namespace ApiLogin.Repository.Interface
     {
         Task<List<EmployeeModel>> GetAllEmployees();
         Task<EmployeeModel> GetEmployeeById(int id);
+        Task<EmployeeModel> GetEmployeeByName(string name);
         Task<EmployeeModel> AddNewEmployee(EmployeeModel newEmployee);
         Task<EmployeeModel> UpdateEmployee(EmployeeModel newEmployee, int id);
         Task<bool> DeleteEmployee(int id); 

@@ -24,6 +24,12 @@ namespace ApiLogin.Repository
                 throw new Exception("EMPLOYEE NOT FOUND");
         }
 
+        public async Task<EmployeeModel> GetEmployeeByName(string name)
+        {
+            return await _dbContext.Employees.FirstOrDefaultAsync(x => x.Name == name) ??
+                throw new Exception("EMPLOYEE NOT FOUND");   
+        }
+
         public async Task<EmployeeModel> AddNewEmployee(EmployeeModel newEmployee)
         {
             await _dbContext.Employees.AddAsync(newEmployee);
@@ -57,6 +63,8 @@ namespace ApiLogin.Repository
             await _dbContext.SaveChangesAsync();
 
             return true;
-        } 
+        }
+
+       
     }
 }
