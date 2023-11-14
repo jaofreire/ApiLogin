@@ -82,3 +82,5 @@ E:\estudo C#\ApiLogin-Repository\ApiLogin\ApiLogin\obj\Debug\net7.0\ApiLogin.pdb
 E:\estudo C#\ApiLogin-Repository\ApiLogin\ApiLogin\obj\Debug\net7.0\ApiLogin.genruntimeconfig.cache
 E:\estudo C#\ApiLogin-Repository\ApiLogin\ApiLogin\obj\Debug\net7.0\ref\ApiLogin.dll
 E:\estudo C#\ApiLogin-Repository\ApiLogin\ApiLogin\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\estudo C#\ApiLogin-Repository\ApiLogin\ApiLogin\bin\Debug\net7.0\AutoMapper.dll
+E:\estudo C#\ApiLogin-Repository\ApiLogin\ApiLogin\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

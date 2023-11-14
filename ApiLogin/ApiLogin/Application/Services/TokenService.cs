@@ -1,11 +1,11 @@
-﻿using ApiLogin.Configures;
-using ApiLogin.Models;
+﻿using ApiLogin.Application.Configures;
+using ApiLogin.Domain.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace ApiLogin.Services
+namespace ApiLogin.Application.Services
 {
     public class TokenService
     {

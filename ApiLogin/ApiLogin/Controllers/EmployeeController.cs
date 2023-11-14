@@ -1,11 +1,12 @@
-﻿using ApiLogin.Models;
-using ApiLogin.Repository.Interface;
+﻿using ApiLogin.Domain.DTOs;
+using ApiLogin.Domain.Interface;
+using ApiLogin.Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiLogin.Controllers
 {
-    [Authorize]
+    
     [ApiController]
     [Route("api/v1/Employee")]
     public class EmployeeController : ControllerBase
@@ -17,32 +18,32 @@ namespace ApiLogin.Controllers
             _employeeRepository = employeeRepository;
         }
         
-        [HttpGet]
-        public async Task<ActionResult<List<EmployeeModel>>> GetAll()
+        [HttpGet("GetAll")]
+        public async Task<ActionResult<List<EmployeeDTO>>> GetAll()
         {
             return await _employeeRepository.GetAllEmployees();
         }
         
-        [HttpGet("{id}")]
-        public async Task<ActionResult<EmployeeModel>> GetById(int id)
+        [HttpGet("GetById/{id}")]
+        public async Task<ActionResult<EmployeeDTO>> GetById(int id)
         {
-            return await _employeeRepository.GetEmployeeById(id);
+            return await _employeeRepository.GetEmployeeDTOById(id);
         }
-        
-        [HttpPost]
+        [Authorize]
+        [HttpPost("Register")]
         public async Task<ActionResult<EmployeeModel>> Register(EmployeeModel newEmployee)
         {
             return await _employeeRepository.AddNewEmployee(newEmployee);
         }
-       
-        [HttpPut("{id}")]
+        [Authorize]
+        [HttpPut("Update/{id}")]
         public async Task<ActionResult<EmployeeModel>> Update(EmployeeModel newEmployee, int id)
         {
             newEmployee.Id = id;
             return await _employeeRepository.UpdateEmployee(newEmployee, id);
         }
-        
-        [HttpDelete("{id}")]
+        [Authorize]
+        [HttpDelete("Delete/{id}")]
         public async Task<ActionResult<bool>> Delete(int id)
         {
             return await _employeeRepository.DeleteEmployee(id);

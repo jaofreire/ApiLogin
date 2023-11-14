@@ -1,6 +1,6 @@
-﻿using ApiLogin.Enum;
+﻿
 
-namespace ApiLogin.Models
+namespace ApiLogin.Domain.Models
 {
     public class EmployeeModel
     {
@@ -10,7 +10,7 @@ namespace ApiLogin.Models
         public string? Password { get; set; }
         public string? Roles { get; set; }
 
-     
+
 
 
     }

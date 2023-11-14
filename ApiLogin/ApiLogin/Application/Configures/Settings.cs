@@ -1,4 +1,4 @@
-﻿namespace ApiLogin.Configures
+﻿namespace ApiLogin.Application.Configures
 {
     public static class Settings
     {

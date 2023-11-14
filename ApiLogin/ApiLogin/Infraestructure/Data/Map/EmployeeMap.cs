@@ -1,8 +1,8 @@
-﻿using ApiLogin.Models;
+﻿using ApiLogin.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ApiLogin.Data.Map
+namespace ApiLogin.Infraestructure.Data.Map
 {
     public class EmployeeMap : IEntityTypeConfiguration<EmployeeModel>
     {

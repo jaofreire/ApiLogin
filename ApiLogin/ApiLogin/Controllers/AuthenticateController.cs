@@ -1,6 +1,6 @@
-﻿using ApiLogin.Models;
-using ApiLogin.Repository.Interface;
-using ApiLogin.Services;
+﻿using ApiLogin.Application.Services;
+using ApiLogin.Domain.Interface;
+using ApiLogin.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiLogin.Controllers

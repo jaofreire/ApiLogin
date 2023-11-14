@@ -1,9 +1,9 @@
-﻿using ApiLogin.Data.Map;
-using ApiLogin.Models;
+﻿using ApiLogin.Infraestructure.Data.Map;
+using ApiLogin.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace ApiLogin.Data
+namespace ApiLogin.Infraestructure.Data
 {
     public class LoginDbContext : DbContext
     {
@@ -11,7 +11,7 @@ namespace ApiLogin.Data
         {
         }
 
-       public DbSet<EmployeeModel> Employees { get; set; }
+        public DbSet<EmployeeModel> Employees { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
