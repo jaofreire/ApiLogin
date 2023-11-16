@@ -9,7 +9,10 @@ namespace ApiLogin.Application.Mapping
         public DomainToDtoMapping()
         {
             CreateMap<EmployeeModel, EmployeeDTO>()
-                .ForMember(dest => dest.role, x => x.MapFrom(orig => orig.Roles));
+                .ForMember(dest => dest.role, x => x.MapFrom(orig => orig.Roles))
+                .ReverseMap();
+
+            
         }
     }
 }

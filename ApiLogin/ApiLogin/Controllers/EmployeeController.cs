@@ -29,11 +29,11 @@ namespace ApiLogin.Controllers
         {
             return await _employeeRepository.GetEmployeeDTOById(id);
         }
-        [Authorize]
+       
         [HttpPost("Register")]
-        public async Task<ActionResult<EmployeeModel>> Register(EmployeeModel newEmployee)
+        public async Task<ActionResult<EmployeeModel>> Register(EmployeeDTORegisterLogin newEmployee)
         {
-            return await _employeeRepository.AddNewEmployee(newEmployee);
+            return await _employeeRepository.AddNewEmployeeDTO(newEmployee);
         }
         [Authorize]
         [HttpPut("Update/{id}")]
@@ -41,12 +41,6 @@ namespace ApiLogin.Controllers
         {
             newEmployee.Id = id;
             return await _employeeRepository.UpdateEmployee(newEmployee, id);
-        }
-        [Authorize]
-        [HttpDelete("Delete/{id}")]
-        public async Task<ActionResult<bool>> Delete(int id)
-        {
-            return await _employeeRepository.DeleteEmployee(id);
         }
 
     }

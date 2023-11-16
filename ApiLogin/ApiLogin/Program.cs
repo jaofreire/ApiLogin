@@ -6,7 +6,6 @@ using ApiLogin.Infraestructure.Data;
 using ApiLogin.Infraestructure.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -69,6 +68,7 @@ builder.Services.AddAuthentication(x =>
 });
 
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IJustAuthorizedRepository, JustAuthorizedRepository>();
 
 builder.Services.AddTransient<TokenService>();
 

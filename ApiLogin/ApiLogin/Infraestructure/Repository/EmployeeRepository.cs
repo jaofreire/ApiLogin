@@ -54,12 +54,23 @@ namespace ApiLogin.Infraestructure.Repository
                 throw new Exception("EMPLOYEE NOT FOUND");
         }
 
-        public async Task<EmployeeModel> AddNewEmployee(EmployeeModel newEmployee)
+        public async Task<EmployeeModel> AddNewEmployeeDTO(EmployeeDTORegisterLogin newEmployee)
         {
-            await _dbContext.Employees.AddAsync(newEmployee);
+            //var employeeModel = _mapper.Map<EmployeeModel>(newEmployee);
+
+            EmployeeModel employee = new EmployeeModel()
+            {
+                
+                Name = newEmployee.Name,
+                Email = newEmployee.Email,
+                Password = newEmployee.Password,
+                Roles = "BEGINNER"
+                
+            };
+            await _dbContext.AddAsync(employee);
             await _dbContext.SaveChangesAsync();
 
-            return newEmployee;
+            return employee;
         }
 
         public async Task<EmployeeModel> UpdateEmployee(EmployeeModel newEmployee, int id)
@@ -70,7 +81,7 @@ namespace ApiLogin.Infraestructure.Repository
             employee.Name = newEmployee.Name;
             employee.Email = newEmployee.Email;
             employee.Password = newEmployee.Password;
-            employee.Roles = newEmployee.Roles;
+          
 
             _dbContext.Employees.Update(employee);
             await _dbContext.SaveChangesAsync();
@@ -89,6 +100,6 @@ namespace ApiLogin.Infraestructure.Repository
             return true;
         }
 
-        
+      
     }
 }

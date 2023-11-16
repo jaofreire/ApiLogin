@@ -9,7 +9,7 @@ namespace ApiLogin.Domain.Interface
         Task<EmployeeDTO> GetEmployeeDTOById(int id);
         Task<EmployeeModel> GetEmployeeById (int id);
         Task<EmployeeModel> GetEmployeeByName(string name);
-        Task<EmployeeModel> AddNewEmployee(EmployeeModel newEmployee);
+        Task<EmployeeModel> AddNewEmployeeDTO(EmployeeDTORegisterLogin newEmployee);
         Task<EmployeeModel> UpdateEmployee(EmployeeModel newEmployee, int id);
         Task<bool> DeleteEmployee(int id);
 
