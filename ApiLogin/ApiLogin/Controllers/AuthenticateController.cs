@@ -21,7 +21,7 @@ namespace ApiLogin.Controllers
         {
            var employee = await _employeeRepository.GetEmployeeByName(name);
 
-            if (employee.Roles == "DEVELOPER")
+            if (employee.Roles == "DEVELOPER" || employee.Roles == "ADM" || employee.Roles == "MANAGER")
             {
                 var token = TokenService.TokenGenerate(employee);
                 return token;

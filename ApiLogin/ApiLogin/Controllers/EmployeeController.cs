@@ -29,19 +29,27 @@ namespace ApiLogin.Controllers
         {
             return await _employeeRepository.GetEmployeeDTOById(id);
         }
+
+        [HttpGet("GetByName/{name}")]
+        public async Task<ActionResult<EmployeeModel>> GetByNome(string name)
+        {
+            return await _employeeRepository.GetEmployeeByName(name);
+        }
        
         [HttpPost("Register")]
         public async Task<ActionResult<EmployeeModel>> Register(EmployeeDTORegisterLogin newEmployee)
         {
             return await _employeeRepository.AddNewEmployeeDTO(newEmployee);
         }
-        [Authorize]
+
         [HttpPut("Update/{id}")]
         public async Task<ActionResult<EmployeeModel>> Update(EmployeeModel newEmployee, int id)
         {
             newEmployee.Id = id;
             return await _employeeRepository.UpdateEmployee(newEmployee, id);
         }
+
+      
 
     }
 }
