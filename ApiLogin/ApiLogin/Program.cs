@@ -82,16 +82,6 @@ builder.Services.AddEntityFrameworkSqlServer().AddDbContext<LoginDbContext>(opti
 options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")
 ));
 
-
-
-
-
-//builder.Services.AddAuthorization(options =>
-//{
-//    // By default, all incoming requests will be authorized according to the default policy.
-//    options.FallbackPolicy = options.DefaultPolicy;
-//});
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
